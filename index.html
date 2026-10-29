@@ -1,30 +1,243 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A Star for Every Kid is a student-led astronomy initiative helping young people explore the universe through learning, discussions, activities, and outreach.">
-  <title>A Star for Every Kid</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>A Star for Every Kid | Astronomy Outreach</title>
+  <meta name="description"
+        content="A Star for Every Kid is a student-led astronomy initiative inspiring young minds to explore the universe.">
+
   <style>
-    * { box-sizing: border-box; }
-    body { margin: 0; background: #f7f7f8; color: #151923; font-family: Arial, Helvetica, sans-serif; }
-    main { width: min(690px, calc(100% - 32px)); margin: 56px auto; }
-    .card { background: #0b1427; color: #f4f6fc; border-radius: 15px; padding: 15px; overflow: hidden; }
-    .hero { display: block; width: 100%; aspect-ratio: 1.77; object-fit: cover; border-radius: 12px; background: radial-gradient(ellipse at 52% 50%, #6a668b 0%, #30365c 28%, #151c39 55%, #0c1429 100%); }
-    h1 { font-size: 20px; line-height: 1.3; margin: 14px 0 14px; }
-    h2 { font-size: 14px; line-height: 1.4; margin: 0 0 14px; }
-    p { font-size: 13px; line-height: 1.5; margin: 0; color: #d7dbe5; }
-    @media (max-width: 480px) { main { margin: 24px auto; } .card { padding: 12px; } h1 { font-size: 19px; } }
+    :root {
+      --background: #0b1427;
+      --background-light: #111e36;
+      --text: #f5f7ff;
+      --muted: #c4cde0;
+      --accent: #91baff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+
+    header {
+      width: 100%;
+      background: var(--background);
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .navbar {
+      max-width: 1400px;
+      margin: auto;
+      padding: 20px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 0.3px;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 15px;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* Milky Way banner */
+
+    .hero-image {
+      width: 100%;
+      height: 55vh;
+      min-height: 320px;
+      max-height: 650px;
+      overflow: hidden;
+      background: #101b35;
+    }
+
+    .hero-image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* Introduction */
+
+    .intro {
+      max-width: 1200px;
+      margin: auto;
+      padding: 70px 5% 90px;
+    }
+
+    .intro h1 {
+      font-size: clamp(36px, 5vw, 64px);
+      line-height: 1.15;
+      margin: 0 0 20px;
+      letter-spacing: -1px;
+    }
+
+    .tagline {
+      font-size: clamp(18px, 2.2vw, 26px);
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 30px;
+    }
+
+    .mission {
+      font-size: 18px;
+      max-width: 850px;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    /* Footer */
+
+    footer {
+      background: var(--background-light);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 28px 5%;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* Mobile */
+
+    @media (max-width: 650px) {
+      .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 18px;
+      }
+
+      .logo {
+        font-size: 18px;
+      }
+
+      nav {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav a {
+        font-size: 14px;
+      }
+
+      .hero-image {
+        height: 38vh;
+        min-height: 220px;
+      }
+
+      .intro {
+        padding: 45px 7% 65px;
+      }
+
+      .mission {
+        font-size: 16px;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <main>
-    <article class="card">
-      <img class="hero" src="milky-way.jpg" alt="The Milky Way stretching across a star-filled night sky">
+
+  <!-- Navigation -->
+  <header>
+    <div class="navbar">
+      <div class="logo">✦ A Star for Every Kid</div>
+
+      <nav aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#activities">Activities</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+
+    <!-- Milky Way image -->
+    <section class="hero-image" aria-label="Milky Way">
+      <img
+        src="milky-way.jpg"
+        alt="A colorful view of the Milky Way and its stars">
+    </section>
+
+    <!-- Introduction -->
+    <section class="intro" id="about">
       <h1>A Star for Every Kid</h1>
-      <h2>Inspiring Young Minds to Explore the Universe</h2>
-      <p>We believe that curiosity about the universe should have no boundaries. A Star for Every Kid is a student-led astronomy initiative dedicated to helping young people discover astronomy through learning, discussions, activities, and community outreach.</p>
-    </article>
+
+      <p class="tagline">
+        Inspiring Young Minds to Explore the Universe
+      </p>
+
+      <p class="mission">
+        We believe that curiosity about the universe should
+        have no boundaries. A Star for Every Kid is a
+        student-led astronomy initiative dedicated to helping
+        young people discover astronomy through learning,
+        discussions, activities, and community outreach.
+      </p>
+    </section>
+
+    <!-- Placeholder for future activities -->
+    <section id="activities" aria-label="Activities">
+      <!-- Add activities content here later -->
+    </section>
+
   </main>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <p>
+      © 2026 A Star for Every Kid
+    </p>
+    <p>
+      Contact:
+      <a href="mailto:astarforeverykid@gmail.com">
+        astarforeverykid@gmail.com
+      </a>
+    </p>
+  </footer>
+
 </body>
 </html>
