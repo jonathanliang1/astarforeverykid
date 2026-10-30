@@ -122,6 +122,32 @@
       line-height: 1.9;
     }
 
+    /* Founder introduction */
+
+    .founder {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 5% 85px;
+    }
+
+    .founder h2 {
+      font-size: clamp(26px, 3vw, 36px);
+      margin: 0 0 12px;
+    }
+
+    .founder p {
+      max-width: 850px;
+      font-size: 18px;
+      line-height: 1.9;
+      color: var(--muted);
+    }
+
+    .founder a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
     /* Footer */
 
     footer {
@@ -170,8 +196,12 @@
         padding: 45px 7% 65px;
       }
 
-      .mission {
+      .mission, .founder p {
         font-size: 16px;
+      }
+
+      .founder {
+        padding: 0 7% 65px;
       }
     }
   </style>
@@ -216,6 +246,22 @@
         student-led astronomy initiative dedicated to helping
         young people discover astronomy through learning,
         discussions, activities, and community outreach.
+      </p>
+    </section>
+
+    <!-- Founder introduction -->
+    <section class="founder" id="founder" aria-labelledby="founder-heading">
+      <h2 id="founder-heading">Meet the Founder</h2>
+      <p>
+        Hi! I'm Jonathan Liang, a student at Adlai E. Stevenson High School
+        in Illinois and the founder of A Star for Every Kid. I'm passionate
+        about astronomy and astrophotography, and I enjoy photographing
+        galaxies, nebulae, and other objects in the night sky, as well as
+        exploring astronomy through observations and research. I started
+        this club to share my interest with others and connect young people
+        around the world who are curious about the universe. You can learn
+        more about my astronomy projects and astrophotography at
+        <a href="https://astrojonathan.com" target="_blank" rel="noopener noreferrer">astrojonathan.com</a>.
       </p>
     </section>
 
